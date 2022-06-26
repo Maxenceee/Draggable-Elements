@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Element</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <draggable-element id="panel-reminders">
+            <custom-reminder class="panel panel-medium-small panel-reminders">
+                <header class="panel-header">
+                    <p>Reminders</p>
+                </header>
+                <div class="reminders-list panel-content">
+                    <div class="reminders-list-header">
+                        <p class="bold">Tonight diner</p>
+                        <p>1</p>
+                    </div>
+                    <div class="reminders-list-items">
+                        <div class="reminders-list-item" data-nodrag="true">
+                            <input type="checkbox">
+                            <input type="text" data-id="0" value="Merveilleux for dessert">
+                        </div>
+                    </div>
+                </div>
+            </custom-reminder>
+        </draggable-element>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
