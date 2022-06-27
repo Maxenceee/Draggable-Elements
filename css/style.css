@@ -19,6 +19,24 @@ body {
   font-weight: 600;
 }
 
+svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+video-player:not([paused]) {
+  cursor: url(/images/icon-pause.png), auto;
+  cursor: -webkit-image-set(url(/images/icon-pause.png) 1x, url(/images/icon-pause@2x.png) 2x), auto;
+  cursor: image-set(url(/images/icon-pause.png) 1x, url(/images/icon-pause@2x.png) 2x), auto;
+}
+
 .dashboard > * {
   position: absolute;
 }
@@ -34,6 +52,17 @@ draggable-element {
     -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
   }
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .panel {
@@ -75,6 +104,11 @@ draggable-element {
 
 .panel-medium-small {
   width: 340px;
+  max-width: 100%;
+}
+
+.panel-size-medium {
+  width: 390px;
   max-width: 100%;
 }
 
@@ -164,5 +198,52 @@ draggable-element {
   outline: 0;
   margin-left: 12px;
   width: 100%;
+}
+
+.reminders-list-btn {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: .5em;
+  bottom: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: #1a66f4;
+  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.14), 0px 2px 12px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.14), 0px 2px 12px rgba(0, 0, 0, 0.06);
+  -webkit-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+  outline: none;
+}
+
+video-player {
+  display: block;
+  position: relative;
+}
+
+video-player[has-started][paused]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  opacity: .6;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  pointer-events: none;
 }
 /*# sourceMappingURL=style.css.map */
